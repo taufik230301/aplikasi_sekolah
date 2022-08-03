@@ -21,7 +21,7 @@
     <script>
     swal({
         title: "Erorr!",
-        text: "Data Gagal Ditambahkan!",
+        text: "Data Gagal Dimasukan!",
         icon: "error"
     });
     </script>
