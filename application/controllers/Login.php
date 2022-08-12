@@ -8,4 +8,15 @@ class Login extends CI_Controller {
         $this->load->view('login');
     }
 
+    public function proses_login()
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        echo var_dump($username);
+        echo var_dump($password);
+        die();
+
+    }
+
 }

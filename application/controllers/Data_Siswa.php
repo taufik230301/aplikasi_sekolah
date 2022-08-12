@@ -5,6 +5,7 @@ class Data_Siswa extends CI_Controller {
 
 	public function view_admin()
 	{
+		
 		$this->load->view('admin/siswa');
 	}
 

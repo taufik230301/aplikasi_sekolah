@@ -74,7 +74,7 @@
                     <div class="signup-image">
                         <figure><img src="<?=base_url();?>assets/login_register/images/signup-image.jpg"
                                 alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="<?=base_url();?>Login/index" class="signup-image-link">Saya sudah terdaftar !</a>
                     </div>
                 </div>
             </div>
