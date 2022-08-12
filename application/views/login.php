@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/login_register/css/style.css">
 
     <!-- Sweetalert -->
-    <script src="<?= base_url(); ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="<?=base_url();?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
 
-    <?php if ($this->session->flashdata('register')){ ?>
+    <?php if ($this->session->flashdata('register')) {?>
     <script>
     swal({
         title: "Success!",
@@ -28,7 +28,31 @@
         icon: "success"
     });
     </script>
-    <?php } ?>
+    <?php }?>
+
+    <?php if ($this->session->flashdata('loggin_err_no_user')) {
+    $message = $this->session->flashdata('loggin_err_no_user');
+    ?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "<?=$message?>",
+        icon: "error"
+    });
+    </script>
+    <?php }?>
+
+    <?php if ($this->session->flashdata('loggin_err_no_password')) {
+    $message = $this->session->flashdata('loggin_err_no_password');
+    ?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "<?=$message?>",
+        icon: "error"
+    });
+    </script>
+    <?php }?>
 
     <div class="main">
 
@@ -53,12 +77,12 @@
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Password" />
                             </div>
-                           
+
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                             </div>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
