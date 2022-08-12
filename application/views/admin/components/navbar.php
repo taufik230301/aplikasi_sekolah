@@ -23,7 +23,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
-                <a href="#" class="dropdown-item dropdown-footer">Log Out</a>
+                <a href="<?= base_url();?>Login/log_out" class="dropdown-item dropdown-footer">Log Out</a>
             </div>
         </li>
         <li class="nav-item">

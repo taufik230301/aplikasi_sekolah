@@ -34,7 +34,28 @@ class Login extends CI_Controller
 
             if ($user['password'] == $password) {
 
-                echo 'Berhasil login';
+                if ($user['id_user_level'] == 1) {
+
+                    $this->session->set_userdata('logged_in', true);
+                    $this->session->set_userdata('id_user', $user['id_user']);
+                    $this->session->set_userdata('username', $user['username']);
+
+                    $this->session->set_flashdata('success_login', 'success_login');
+                    redirect('Dashboard/view_admin');
+
+                } elseif ($user['id_user_level'] == 2) {
+
+                    $this->session->set_userdata('logged_in', true);
+                    $this->session->set_userdata('id_user', $user['id_user']);
+                    $this->session->set_userdata('username', $user['username']);
+
+                    $this->session->set_flashdata('success_login', 'success_login');
+                    redirect('Dashboard/view_siswa');
+
+                } else {
+                    $this->session->set_flashdata('loggin_err_no_access', 'Anda Tidak Memiliki Hak Akses !');
+                    redirect('Login/index');
+                }
 
             } else {
 
@@ -50,6 +71,17 @@ class Login extends CI_Controller
 
         }
 
+    }
+
+    public function log_out()
+    {
+
+       
+        $this->session->unset_userdata('logged_in');
+        $this->session->unset_userdata('id_user');
+
+        $this->session->set_flashdata('success_log_out', 'success_log_out');
+        redirect('Login/index');
     }
 
 }

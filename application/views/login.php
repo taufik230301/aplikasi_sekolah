@@ -20,6 +20,16 @@
 
 <body>
 
+    <?php if ($this->session->flashdata('success_log_out')) {?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Telah Log out !",
+        icon: "success"
+    });
+    </script>
+    <?php }?>
+
     <?php if ($this->session->flashdata('register')) {?>
     <script>
     swal({
@@ -54,6 +64,18 @@
     </script>
     <?php }?>
 
+    <?php if ($this->session->flashdata('loggin_err_no_access')) {
+    $message = $this->session->flashdata('loggin_err_no_access');
+    ?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "<?=$message?>",
+        icon: "error"
+    });
+    </script>
+    <?php }?>
+
     <div class="main">
 
         <!-- Sing in  Form -->
@@ -68,7 +90,8 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Log in</h2>
-                        <form action="<?=base_url();?>Login/proses_login" method="POST" class="register-form" id="login-form">
+                        <form action="<?=base_url();?>Login/proses_login" method="POST" class="register-form"
+                            id="login-form">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Your Username" />
