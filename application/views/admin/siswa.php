@@ -58,7 +58,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Username</th>
-                                                <th>Email</th>
+                                                <th>Emails</th>
                                                 <th>Nama Lengkap</th>
                                                 <th>Alamat</th>
                                                 <th>Tempat Lahir</th>
